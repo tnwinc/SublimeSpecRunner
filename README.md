@@ -8,7 +8,7 @@ Currently, this is only set up to work with iTerm through an AppleScript, so it'
 
 Open Terminal and run the following:
 
-    cd ~/Library/Application Support/Sublime Text 2/Packages && git clone git@github.com:tnwinc/SublimeSpecRunner.git
+    cd ~/Library/Application\ Support/Sublime\ Text\ 2/Packages && git clone git@github.com:tnwinc/SublimeSpecRunner.git
 
 ## Setup
 
