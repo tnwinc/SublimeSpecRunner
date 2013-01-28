@@ -4,9 +4,13 @@ Adds commands for running specs in iTerm that can be hooked into with key bindin
 
 Currently, this is only set up to work with iTerm through an AppleScript, so it's OSX only.
 
-## Setup
+## Installation
 
-Add SpecRunner directory to your Packages directory (Preferences > Browse Packages).
+Open Terminal and run the following:
+
+    cd ~/Library/Application Support/Sublime Text 2/Packages && git clone git@github.com:tnwinc/SublimeSpecRunner.git
+
+## Setup
 
 Create key bindings. The following commands are available:
 
