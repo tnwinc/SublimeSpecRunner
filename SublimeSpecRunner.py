@@ -2,7 +2,7 @@ import sublime
 import sublime_plugin
 import re
 
-applescript = sublime.packages_path() + "/SpecRunner/sendCommand.scpt"
+applescript = sublime.packages_path() + "/SublimeSpecRunner/sendCommand.scpt"
 
 
 def get_file_path(full_path):
