@@ -1,33 +1,35 @@
 # Sublime Text Spec Runner
 
-Adds commands for running specs in iTerm that can be hooked into with key bindings.
+Adds commands for running specs in iTerm with keyboard shortcuts.
 
-Currently, this is only set up to work with iTerm through an AppleScript, so it's OSX only.
+## Requirements
+
+* OSX
+* [zsh](https://github.com/robbyrussell/oh-my-zsh)
+* [iTerm](http://iterm.sourceforge.net/)
 
 ## Installation
+
+### Sublime Text 2
 
 Open Terminal and run the following:
 
     cd ~/Library/Application\ Support/Sublime\ Text\ 2/Packages && git clone git@github.com:tnwinc/SublimeSpecRunner.git
 
-## Setup
+### Sublime Text 3
 
-Create key bindings. The following commands are available:
+Open Terminal and run the following:
 
-- run_all_specs
-- run_local_specs
-- run_specific_specs
-- debug_all_specs
-- debug_local_specs
-- debug_specific_specs
-- rerun_last_specs
+    cd ~/Library/Application\ Support/Sublime\ Text\ 3/Packages && git clone git@github.com:tnwinc/SublimeSpecRunner.git
 
-Use them like so in your user key bindings config:
+## Key Bindings
 
-    { "keys": ["super+alt+ctrl+y"], "command": "run_all_specs" },
-    { "keys": ["super+alt+ctrl+u"], "command": "run_local_specs" },
-    { "keys": ["super+alt+ctrl+i"], "command": "run_specific_specs" },
-    { "keys": ["super+alt+ctrl+h"], "command": "debug_all_specs" },
-    { "keys": ["super+alt+ctrl+j"], "command": "debug_local_specs" },
-    { "keys": ["super+alt+ctrl+k"], "command": "debug_specific_specs" },
-    { "keys": ["super+alt+ctrl+l"], "command": "rerun_last_specs" }
+The default key bindings are:
+
+* Run all specs: `cmd` + `option` + `ctrl` + `y`
+* Run local specs: `cmd` + `option` + `ctrl` + `u`
+* Run current spec: `cmd` + `option` + `ctrl` + `i`
+* Debug all specs: `cmd` + `option` + `ctrl` + `h`
+* Debug local specs: `cmd` + `option` + `ctrl` + `j`
+* Debug current spec: `cmd` + `option` + `ctrl` + `k`
+* Re-run last spec(s): `cmd` + `option` + `ctrl` + `l`

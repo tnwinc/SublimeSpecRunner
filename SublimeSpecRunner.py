@@ -2,8 +2,8 @@ import sublime
 import sublime_plugin
 import re
 
-applescript = sublime.packages_path() + "/SublimeSpecRunner/sendCommand.scpt"
-
+def applescriptPath():
+    return sublime.packages_path() + "/SublimeSpecRunner/sendCommand.scpt"
 
 def get_file_path(full_path):
     file_match = re.match('^\/(.+\/)*(.+)\.(.+)$', full_path)
@@ -15,9 +15,9 @@ class RunAllSpecs(sublime_plugin.TextCommand):
         self.view.window().run_command("exec", {
             "cmd": [
                 "osascript",
-                applescript,
+                applescriptPath(),
                 "spec_all",
-                "shopt -s globstar nullglob; export PS1=; cd " + get_file_path(self.view.file_name()) + "; clear; rake test reporter=progress"
+                "setopt NULL_GLOB; cd " + get_file_path(self.view.file_name()) + "; clear; rake test reporter=progress"
             ]
         })
 
@@ -27,9 +27,9 @@ class RunLocalSpecs(sublime_plugin.TextCommand):
         self.view.window().run_command("exec", {
             "cmd": [
                 "osascript",
-                applescript,
+                applescriptPath(),
                 "specs_local",
-                "shopt -s globstar nullglob; export PS1=; cd " + get_file_path(self.view.file_name()) + "; clear; rake test reporter=spec " + get_file_path(self.view.file_name()) + "*.spec.js " + get_file_path(self.view.file_name()) + "*/*.spec.js"
+                "setopt NULL_GLOB; cd " + get_file_path(self.view.file_name()) + "; clear; rake test reporter=spec " + get_file_path(self.view.file_name()) + "*.spec.js " + get_file_path(self.view.file_name()) + "*/*.spec.js"
             ]
         })
 
@@ -39,9 +39,9 @@ class RunSpecificSpecs(sublime_plugin.TextCommand):
         self.view.window().run_command("exec", {
             "cmd": [
                 "osascript",
-                applescript,
+                applescriptPath(),
                 "specs_local",
-                "shopt -s globstar nullglob; export PS1=; cd " + get_file_path(self.view.file_name()) + "; clear; rake test reporter=spec " + self.view.file_name()
+                "setopt NULL_GLOB; cd " + get_file_path(self.view.file_name()) + "; clear; rake test reporter=spec " + self.view.file_name()
             ]
         })
 
@@ -51,9 +51,9 @@ class DebugAllSpecs(sublime_plugin.TextCommand):
         self.view.window().run_command("exec", {
             "cmd": [
                 "osascript",
-                applescript,
+                applescriptPath(),
                 "spec_all",
-                "shopt -s globstar nullglob; export PS1=; cd " + get_file_path(self.view.file_name()) + "; clear; rake test debug=true;",
+                "setopt NULL_GLOB; cd " + get_file_path(self.view.file_name()) + "; clear; rake test debug=true;",
                 "focus"
             ]
         })
@@ -64,9 +64,9 @@ class DebugLocalSpecs(sublime_plugin.TextCommand):
         self.view.window().run_command("exec", {
             "cmd": [
                 "osascript",
-                applescript,
+                applescriptPath(),
                 "specs_local",
-                "shopt -s globstar nullglob; export PS1=; cd " + get_file_path(self.view.file_name()) + "; clear; rake test debug=true " + get_file_path(self.view.file_name()) + "*.spec.js " + get_file_path(self.view.file_name()) + "*/*.spec.js",
+                "setopt NULL_GLOB; cd " + get_file_path(self.view.file_name()) + "; clear; rake test debug=true " + get_file_path(self.view.file_name()) + "*.spec.js " + get_file_path(self.view.file_name()) + "*/*.spec.js",
                 "focus"
             ]
         })
@@ -77,9 +77,9 @@ class DebugSpecificSpecs(sublime_plugin.TextCommand):
         self.view.window().run_command("exec", {
             "cmd": [
                 "osascript",
-                applescript,
+                applescriptPath(),
                 "specs_local",
-                "shopt -s globstar nullglob; export PS1=; cd " + get_file_path(self.view.file_name()) + "; clear; rake test debug=true " + self.view.file_name(),
+                "setopt NULL_GLOB; cd " + get_file_path(self.view.file_name()) + "; clear; rake test debug=true " + self.view.file_name(),
                 "focus"
             ]
         })
@@ -90,8 +90,8 @@ class RerunLastSpecs(sublime_plugin.TextCommand):
         self.view.window().run_command("exec", {
             "cmd": [
                 "osascript",
-                applescript,
+                applescriptPath(),
                 "specs_local",
-                "shopt -s globstar nullglob; export PS1=; cd " + get_file_path(self.view.file_name()) + "; clear; rake test rerun=true"
+                "setopt NULL_GLOB; cd " + get_file_path(self.view.file_name()) + "; clear; rake test rerun=true"
             ]
         })

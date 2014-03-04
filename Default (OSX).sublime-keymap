@@ -1,0 +1,9 @@
+[
+    { "keys": ["super+alt+ctrl+y"], "command": "run_all_specs" },
+    { "keys": ["super+alt+ctrl+u"], "command": "run_local_specs" },
+    { "keys": ["super+alt+ctrl+i"], "command": "run_specific_specs" },
+    { "keys": ["super+alt+ctrl+h"], "command": "debug_all_specs" },
+    { "keys": ["super+alt+ctrl+j"], "command": "debug_local_specs" },
+    { "keys": ["super+alt+ctrl+k"], "command": "debug_specific_specs" },
+    { "keys": ["super+alt+ctrl+l"], "command": "rerun_last_specs" }
+]
