@@ -6,7 +6,7 @@ Adds commands for running specs in iTerm with keyboard shortcuts.
 
 * OSX
 * [zsh](https://github.com/robbyrussell/oh-my-zsh)
-* [iTerm](http://iterm.sourceforge.net/)
+* [iTerm](http://www.iterm2.com/)
 
 ## Installation
 
